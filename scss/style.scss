@@ -1,0 +1,355 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+
+$mainColor: #00ED8B;
+$mainDark: #02b46a;
+$darkGray: #212121;
+
+body {
+   min-height: 100vh;
+   color: white;
+   background-image: url("../assets/pattern.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   font-family: Roboto;
+}
+
+h1,
+h2 {
+   font-family: 'Bebas neue';
+}
+
+.wrapper {
+   max-width: 1440px;
+   margin: 0 auto;
+}
+
+nav.mobile {
+   display: block;
+   height: 60px;
+   width: 100%;
+   background-color: #2c2c2c;
+   position: fixed;
+   z-index: 1;
+
+   div.image-wrap {
+      img {
+         margin: 10px;
+         height: 36px;
+      }
+   }
+
+   div.arrow {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: $mainColor;
+      text-align: center;
+      transition: .4s;
+
+      i {
+         line-height: 38px;
+         font-size: 30px;
+         color: black;
+      }
+   }
+
+   div.arrow.active {
+      transform: rotate(180deg);
+   }
+}
+
+.menu {
+   width: 100%;
+   height: 200px;
+   background-color: $darkGray;
+   position: fixed;
+   left: 0;
+   top: -200px; // animować
+   margin-top: 50px;
+   transition: .4s;
+
+   ul {
+      list-style: none;
+      margin: 40px;
+
+      li {
+         margin: 10px;
+
+         a {
+            text-decoration: none;
+            color: rgb(201, 201, 201);
+            font-size: 25px;
+         }
+      }
+   }
+}
+
+.menu.active {
+   top: 0px;
+}
+
+nav.desktop {
+   position: fixed;
+   left: 0;
+   display: none;
+   height: 70px;
+   width: 100%;
+   background-color: #2c2c2c;
+   position: fixed;
+
+   .nav-wrap {
+      max-width: 1440px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+
+      .logo-desktop {
+
+         img {
+            height: 55px;
+            margin: 5px;
+         }
+      }
+
+      .nav-buy {
+         padding: 0 20px;
+         margin: 15px;
+         height: 40px;
+         background-color: $mainColor;
+         color: black;
+         border-radius: 30px;
+         line-height: 40px;
+         font-weight: bold;
+         font-size: 20px;
+         transition: .3s;
+         cursor: pointer;
+         border: none;
+
+         &:hover {
+            background-color: $mainDark;
+         }
+      }
+
+      ul {
+         list-style: none;
+         display: flex;
+         align-content: center;
+
+         li {
+            margin: 20px;
+
+            a {
+               text-decoration: none;
+               color: rgb(201, 201, 201);
+               font-size: 25px;
+
+               &:hover {
+                  color: white;
+               }
+            }
+         }
+      }
+   }
+}
+
+span.green {
+   color: $mainColor;
+}
+
+main {
+   // hero
+   height: 1000px;
+   background-image: url("../assets/hero_bg.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   padding-top: 50px;
+
+   .main-wrap {
+      margin: 80px 10px 0 10px;
+      ;
+
+      h1 {
+         padding-top: 20px;
+         font-size: 25vw;
+         font-family: 'Bebas neue';
+         line-height: 25vw;
+
+      }
+
+      p {
+         border-top: 2px solid white;
+         margin: 0 10px;
+         width: 300px;
+         font-size: 20px;
+         padding-top: 10px;
+      }
+   }
+
+   .hero-image {
+      display: none;
+   }
+}
+
+section.product {
+   background-image: linear-gradient(#4e4e4e, $darkGray);
+   display: flex;
+   align-items: center;
+
+   .text1 {
+      font-size: 20px;
+      flex-basis: 100%;
+      margin: 20px;
+      padding-top: 10px;
+
+      h2 {
+         color: $mainColor;
+         font-size: 100px;
+      }
+
+      .p-wrap {
+         border-top: 2px solid white;
+         padding-top: 10px;
+      }
+   }
+
+   .img1 {
+      display: none;
+      padding: 50px;
+      flex-basis: 30%;
+
+      img {
+         width: 100%;
+      }
+   }
+}
+
+section.about {
+   background-color: $darkGray;
+   display: flex;
+   align-items: center;
+   padding-bottom: 100px;
+
+   .text2 {
+      font-size: 20px;
+      flex-basis: 100%;
+      margin: 20px;
+      padding-top: 10px;
+
+      h2 {
+         color: $mainColor;
+         font-size: 100px;
+      }
+
+      .p-wrap {
+         border-top: 2px solid white;
+         padding-top: 10px;
+      }
+   }
+
+   .img2 {
+      display: none;
+      padding: 50px;
+      flex-basis: 30%;
+
+      img {
+         width: 100%;
+      }
+   }
+}
+
+section.buy {
+   height: 400px;
+   background-color: #4e4e4e;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+
+   p {
+      font-size: 30px;
+      text-align: center;
+      padding: 20px;
+   }
+
+   .price {
+      color: $mainColor;
+      font-size: 40px;
+      background-color: #2c2c2c;
+      border: 5px solid $darkGray;
+      padding: 20px 30px;
+      border-radius: 50px;
+   }
+
+   button {
+      padding: 0 20px;
+      margin: 10px;
+      height: 40px;
+      background-color: $mainColor;
+      color: black;
+      border-radius: 30px;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 20px;
+      transition: .3s;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+         background-color: $mainDark;
+      }
+   }
+}
+
+footer {
+   height: 400px;
+   background-color: $darkGray;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+   .list {
+      margin: 50px;
+
+      ul {
+         list-style: none;
+
+         li {
+            margin: 20px;
+
+            a {
+               font-size: 20px;
+               color: gray;
+               text-decoration: none;
+
+               &:hover {
+                  color: white;
+               }
+            }
+         }
+      }
+
+      img {
+         width: 100px;
+      }
+   }
+
+   .copy {
+      align-self: flex-end;
+      margin-bottom: 130px;
+      color: #555
+   }
+}
+
+
+@import '_media.scss'
